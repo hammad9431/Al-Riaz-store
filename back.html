@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #f47920;
+      --dark: #1c1c1c;
+      --text: #3a3a3a;
+      --muted: #6b6b6b;
+      --bg: #f2f2ee;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .services-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+    }
+
+   
+
+    /* Header — ONE ROW: heading left, para right */
+    .services-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 80px;
+      margin-bottom: 50px;
+    }
+    .services-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--dark);
+      flex: 0 0 auto;
+    }
+    .services-header h2 strong { font-weight: 700; }
+    .services-header p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--muted);
+      flex: 1;
+      padding-top: 6px;
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+       gap: 30px;
+    }
+
+    /* Single card */
+    .service-card {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      cursor: pointer;
+     
+    }
+
+    .service-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .service-card:hover img { transform: scale(1.06); }
+
+    /* Text box at bottom — orange ONLY on text area on hover */
+    .card-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 22px 26px;
+      z-index: 3;
+      /* background: rgba(0, 0, 0, 0.58); */
+      transition: background 0.35s ease;
+    }
+    .service-card:hover .card-text {
+      background: var(--orange);
+    }
+
+    .card-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .card-text p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.9);
+    }
+
+    @media (max-width: 768px) {
+      .services-header { flex-direction: column; gap: 16px; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .service-card { height: 300px; }
+    }
+    @media (max-width: 320px) {
+      .services-section { padding: 40px 20px 60px; }
+      .cards-grid { grid-template-columns: 1fr; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="services-section">
+
+  <!-- Header: ONE ROW -->
+  <div class="services-header">
+    <h2><strong>Services</strong> We<br>Provide</h2>
+    <p>Mauris ornare tellus et cursus volutpat. Praesent neque justo, dapibus id vestibulum nec, accumsan vitae sapien. Curabitur tempus tortor sit amet sapien venenatis, vitae blandit diam pharetra. Donec vel diam id nisl feugiat fringilla.</p>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards-grid">
+
+    <!-- Card 1 -->
+    <div class="service-card">
+      <img src="./assets/images/35.jpg" alt="Iron Welding"/>
+      <div class="card-text">
+        <h3>Iron Welding</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="service-card">
+      <img src="./assets/images/Stitching-scaled.jpeg" alt="Petroleum Refinery"/>
+      <div class="card-text">
+        <h3>Petrolium Refinery</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="service-card">
+      <img src="./assets/images/32.jpg" alt="Oil Plantation"/>
+      <div class="card-text">
+        <h3>Oil Plantation</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="./assets/images/32.jpg" alt="Oil Plantation"/>
+      <div class="card-text">
+        <h3>Oil Plantation</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="./assets/images/32.jpg" alt="Oil Plantation"/>
+      <div class="card-text">
+        <h3>Oil Plantation</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="./assets/images/32.jpg" alt="Oil Plantation"/>
+      <div class="card-text">
+        <h3>Oil Plantation</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
