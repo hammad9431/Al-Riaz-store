@@ -14,27 +14,24 @@
       </a>
     </div>
      <button class="menu-toggle" id="menuToggle">☰</button>
-    <nav class="nav" id="mainNav">
-      <button id="closeMenu" class="close-btn">✖</button>
-       <a href='#home' class="nav-link">Home</a>
-      <a href="#products" class="nav-link">Products</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#About-us" class="nav-link">About Us</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <a href="#" class="nav-link">Documentation</a>
-       <div class="nav-item dropdown">
-  <!-- <a href="#" class="nav-link">Documentation</a> -->
+   <nav class="nav" id="mainNav">
+  <button id="closeMenu" class="close-btn">✖</button>
 
-  <div class="dropdown-menu">
-    <a href="#" onclick="window.open('./Pdf/Smeta Audit Report of Al-Riaz Knitwear (Pvt.) Limited-2015.pdf')"
-    >Sedex Report</a>
-    <a href="#">Sedex Report Online</a>
-    <a href="#" onclick="window.open('./Pdf/AL-Riaz profile .pdf')"
-    >Profile</a>
+  <a href='#home' class="nav-link">Home</a>
+  <a href="#products" class="nav-link">Products</a>
+  <a href="#services" class="nav-link">Services</a>
+  <a href="#About-us" class="nav-link">About Us</a>
+  <a href="#contact" class="nav-link">Contact</a>
+
+  <div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle">Documentation ▼</a>
+    <div class="dropdown-menu">
+      <a href="#" onclick="window.open('./Pdf/Smeta Audit Report of Al-Riaz Knitwear (Pvt.) Limited-2015.pdf')">Sedex Report</a>
+      <a href="#">Sedex Report Online</a>
+      <a href="#" onclick="window.open('./Pdf/AL-Riaz profile .pdf')">Profile</a>
+    </div>
   </div>
-</div>
-
-    </nav>
+</nav>
   </div>
 </header>
 <body>
@@ -390,6 +387,18 @@ We provide end-to-end clothing solutions including manufacturing, sourcing, and 
 </body>
 
 <!-- Header-heading-script --Start-->
+<script>
+const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+dropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector('.dropdown-toggle');
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    dropdown.classList.toggle('active'); // toggle menu
+  });
+});
+</script>
+
 <script>
 const mainHeader = document.querySelector('.header');
 
