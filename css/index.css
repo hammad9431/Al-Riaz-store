@@ -332,34 +332,36 @@ body {
     visibility: visible;
     transform: translateY(0);
   }
+
   .dropdown-menu {
-    display: none;            
-    flex-direction: column;   
-    max-width: 80%;             
-    background: #fff;         
-    margin-top: 5px;          
+    display: none;
+    flex-direction: column;
+    max-width: 30%;
+    width: 30%;
+    background: #fff;
+    margin-top: 5px;
+    margin-left: 25%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     border-radius: 5px;
     overflow: hidden;
-    margin-left:25%;
-   
-    padding: 0 0px;
-    
+    padding: 0;
   }
+
   .nav-item.dropdown {
-    align-self: center;  
-    margin: 10px 0;      
+    align-self: center;
+    margin: 10px 0;
     width: 100%;
-    display:flex;
-    flex-direction: column;   /* vertical menu */
-    position: relative;   
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   .nav-item.dropdown.active .dropdown-menu {
     display: flex;
   }
+
   .dropdown-menu a {
-    text-align: center;       /* links center aligned */
+    text-align: center;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
   }
@@ -367,27 +369,28 @@ body {
   .dropdown-menu a:last-child {
     border-bottom: none;
   }
+
   .nav-link:hover::after {
     left: 0px;
   }
+
   .nav-link.active::after {
-    /* width: 210px; */
     left: 0px;
   }
+
   .header-main {
     display: flex;
     width: 100%;
-    /* padding: 10px 10px; */
     justify-content: center;
     text-align: center;
     position: relative;
-    /* box-sizing: border-box; */
   }
+
   .logo img {
-    /* position: absolute; */
     left: 50%;
     transform: translateX(-50%);
   }
+
   .menu-toggle {
     display: block;
     font-size: 26px;
@@ -407,23 +410,18 @@ body {
     position: absolute;
     top: -100%;
     left: 0;
-    /* top: 70px; */
     width: 100%;
     height: 500px;
-    /* background: rgba(90, 84, 84, 0.562); */
     background: rgba(71, 70, 70, 0.637);
     flex-direction: column;
-    /* padding: 30px 20px; */
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
     transition: left 0.3s ease;
     z-index: 2000;
     opacity: 0;
     pointer-events: none;
-    /* border-bottom: 1px solid rgba(255,255,255,0.1); */
   }
+
   .nav.show {
-    /* position: fixed; */
-    /* top: 70px;  */
     opacity: 1;
     pointer-events: auto;
   }
@@ -439,20 +437,19 @@ body {
     justify-content: center;
     width: 100%;
     border-bottom: 1px solid #b8b5b5;
-    /* padding: 0px 10px; */
   }
-  /* .nav-link:last-child { border-bottom: none;} */
 
   .close-btn {
-   
     display: block;
-     font-size: 26px; 
-     margin-left: 92%; 
-     margin-top: 85px;
-     color: black;     
-     cursor: pointer;
-    background: none;border: none;
+    font-size: 26px;
+    margin-left: 92%;
+    margin-top: 85px;
+    color: black;
+    cursor: pointer;
+    background: none;
+    border: none;
   }
+
   .search-btn {
     position: absolute;
     right: 10px;
@@ -461,41 +458,49 @@ body {
 }
 
 @media (max-width: 430px) {
-
-  /* Close button */
   .close-btn {
-     margin-left: 88%; 
-      margin-top: 85px;
-     
+    margin-left: 88%;
+    margin-top: 85px;
   }
 
-
-  /* Dropdown container */
   .nav-item.dropdown {
     align-self: center;
-    width: 100%;                /* full width */
+    width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
   }
-
-  /* Dropdown menu */
-  .dropdown-menu {
+.dropdown-menu {
     display: none;
     flex-direction: column;
-    width: 100%;                 /* responsive width */
-    margin: 10px 0px;    /* center horizontally */
-    padding: 0;
+    max-width: 10%;
+    width: 10%;
+    background: #fff;
+    margin-top: 5px;
+    margin-left: 3%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     border-radius: 5px;
-    text-align: center;         /* links center aligned */
-    margin-left: 15px;
+    overflow: hidden;
+    padding: 0;
   }
 
   .nav-item.dropdown.active .dropdown-menu {
     display: flex;
   }
+
+  .dropdown-menu a {
+    padding: 3px 0;
+  }
 }
+@media (max-width: 375px) {
+  .dropdown-menu {
+   
+    
+    
+    margin-left: 0%;
+    }
+}
+
 /* Logo & nav items — initial state */
 
 .logo img,

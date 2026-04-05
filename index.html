@@ -387,16 +387,75 @@ We provide end-to-end clothing solutions including manufacturing, sourcing, and 
 </body>
 
 <!-- Header-heading-script --Start-->
-<script>
+ <!-- DROP-DOWN--OPEN-CLOSE -->
+<!-- <script>
 const dropdowns = document.querySelectorAll('.nav-item.dropdown');
 
 dropdowns.forEach(dropdown => {
   const toggle = dropdown.querySelector('.dropdown-toggle');
   toggle.addEventListener('click', e => {
     e.preventDefault();
-    dropdown.classList.toggle('active'); // toggle menu
+    dropdown.classList.toggle('active'); 
   });
 });
+</script>
+<script>
+  document.addEventListener('click', function(e) {
+  const nav = document.querySelector('.nav');
+  const menuToggle = document.querySelector('.menu-toggle');
+
+  if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+    nav.classList.remove('show');
+  }
+});
+</script> -->
+<script>
+  const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+  // Dropdown toggle
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    toggle.addEventListener('click', e => {
+      e.stopPropagation();
+      e.preventDefault();
+
+      dropdowns.forEach(d => {
+        if (d !== dropdown) d.classList.remove('active');
+      });
+
+      dropdown.classList.toggle('active');
+    });
+  });
+
+  // Nav links click pe nav band karo
+  const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelector('.nav').classList.remove('show');
+      dropdowns.forEach(d => d.classList.remove('active'));
+    });
+  });
+
+  // Dropdown andar ke links (About, Contact etc)
+  const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelector('.nav').classList.remove('show');
+      dropdowns.forEach(d => d.classList.remove('active'));
+    });
+  });
+
+  // Bahar click pe band
+  document.addEventListener('click', function(e) {
+    const nav = document.querySelector('.nav');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    dropdowns.forEach(d => d.classList.remove('active'));
+
+    if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+      nav.classList.remove('show');
+    }
+  });
 </script>
 
 <script>
