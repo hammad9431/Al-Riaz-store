@@ -336,8 +336,8 @@ body {
   .dropdown-menu {
     display: none;
     flex-direction: column;
-    max-width: 30%;
-    width: 30%;
+    min-width: 50%;
+    /* width: 30%; */
     background: #fff;
     margin-top: 5px;
     margin-left: 25%;
@@ -411,7 +411,8 @@ body {
     top: -100%;
     left: 0;
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
+    height:auto;
     background: rgba(71, 70, 70, 0.637);
     flex-direction: column;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
@@ -470,18 +471,9 @@ body {
     flex-direction: column;
     position: relative;
   }
-.dropdown-menu {
-    display: none;
-    flex-direction: column;
-    max-width: 10%;
-    width: 10%;
-    background: #fff;
-    margin-top: 5px;
-    margin-left: 3%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    padding: 0;
+  .dropdown-menu {
+    min-width: 70%;
+    margin-left: 15%;
   }
 
   .nav-item.dropdown.active .dropdown-menu {
@@ -492,14 +484,14 @@ body {
     padding: 3px 0;
   }
 }
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   .dropdown-menu {
    
     
     
     margin-left: 0%;
     }
-}
+} */
 
 /* Logo & nav items — initial state */
 
@@ -1122,7 +1114,7 @@ body {
 
 /* <!-- --OUR-GOAL--SECTION--START-- --> */
 .hero-section {
-  height: 100vh;
+  height: 130vh;
   background: url("../assets/images/transpotate.jpg") center/cover no-repeat;
 
   /* 🔥 IMPORTANT (parallax effect) */
@@ -1173,7 +1165,7 @@ body {
 }
 @media (max-width: 768px) {
   .hero-section {
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
 }
 /* <!-- --OUR-GOAL--SECTION--END-- --> */
