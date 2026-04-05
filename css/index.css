@@ -510,7 +510,7 @@ body {
 }
 .text-wrapper {
   position: absolute;   
-  top: 5%;           
+  top: 50%;           
   left: 50%;           
   transform: translate(-50%, -50%); 
   width: 90%;           
@@ -621,7 +621,7 @@ body {
     margin-top: 0px;
   }
   .text-wrapper {
-  margin: 25% auto;
+  margin: 0% auto;
 }
 }
 @media (max-width: 1024px) {
@@ -673,7 +673,7 @@ body {
     height: 620px;
   }
   .text-wrapper {
-  margin: 75% auto;
+  margin: 65% auto;
 }
   .first-text {
     font-size: 25px;
@@ -907,6 +907,13 @@ body {
 }
 
 /* ── RESPONSIVE ── */
+@media (min-width: 1404px) {
+  .about-section {
+  
+  max-width: 1800px;
+ 
+}
+}
 @media (max-width: 1024px) {
   .about-section {
     gap: 30px;
@@ -1062,6 +1069,18 @@ body {
 .service-card:nth-child(2).show { animation-delay: 0.2s; }
 .service-card:nth-child(3).show { animation-delay: 0.3s; }
 .service-card:nth-child(4).show { animation-delay: 0.4s; }
+@media (min-width: 1440px) {
+     .services-section {
+  max-width: 1800px;
+ 
+}
+.services-header h2{
+  font-size: 40px;
+}
+.services-header p{
+  font-size: 25px;
+}
+}
 @media (max-width: 1024px) {
   .services-section {
     padding: 60px 35px;
@@ -1770,7 +1789,7 @@ iframe {
   .footer-col {
     padding: 0;
     border-bottom: 1px solid rgba(255,255,255,0.08); /* ← cols alag dikhein */
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
 
   .footer-col:last-child {
