@@ -621,7 +621,7 @@ body {
     margin-top: 0px;
   }
   .text-wrapper {
-  margin: 0% auto;
+  margin: 0 auto;
 }
 }
 @media (max-width: 1024px) {
@@ -634,7 +634,7 @@ body {
     margin-top: 0px;
   }
   .text-wrapper {
-  margin: 33% auto;
+  margin: 1% auto;
 }
   .prev,
   .next {
@@ -653,7 +653,7 @@ body {
     margin-top: 0px;
   }
   .text-wrapper {
-  margin: 35% auto;
+  margin: -9% auto;
 }
   .prev,
   .next {
@@ -673,7 +673,7 @@ body {
     height: 620px;
   }
   .text-wrapper {
-  margin: 65% auto;
+  margin: -30% auto;
 }
   .first-text {
     font-size: 25px;
