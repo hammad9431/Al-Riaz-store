@@ -24,7 +24,9 @@
   <a href="#contact" class="nav-link">Contact</a>
 
   <div class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle">Documentation</a>
+    <a href="#" class="nav-link dropdown-toggle">Documentation
+      <img class="Angles-down" src="./assets/svg/angle-down-solid-full.svg" alt="">
+    </a>
     <div class="dropdown-menu">
       <a href="#" onclick="window.open('./Pdf/Smeta Audit Report of Al-Riaz Knitwear (Pvt.) Limited-2015.pdf')">Sedex Report</a>
       <a href="#">Sedex Report Online</a>
@@ -34,6 +36,7 @@
 </nav>
   </div>
 </header>
+<div class="nav-overlay" id="navOverlay"></div>
 <body>
  <div class="simple-carousel" id="home">
     <div class="carousel-slide">
@@ -202,8 +205,8 @@ We provide end-to-end clothing solutions including manufacturing, sourcing, and 
 
   <div class="hero-content">
     <h4>OUR GOAL</h4>
-    <h3>The goal was to meet demand for a brand that combined both quality and style.Our team is committed to make and supply products that people don't just want but need.</h3>
-  </div>
+    <h3>Our goal is to deliver products that combine quality and style—items people truly need.</h3> 
+   </div>
 </section>
 <!-- --OUR-GOAL--SECTION--EnD-- -->
 
@@ -436,6 +439,29 @@ dropdowns.forEach(dropdown => {
   }
 });
 </script> -->
+
+<!-- --BODY--BLUER-- -->
+<script>
+  const overlay = document.getElementById('navOverlay');
+
+// menu open hone par
+document.getElementById('menuToggle').addEventListener('click', function() {
+  document.getElementById('mainNav').classList.add('show');
+  overlay.classList.add('active');  // ✅ overlay on
+});
+
+// menu close hone par
+document.getElementById('closeMenu').addEventListener('click', function() {
+  document.getElementById('mainNav').classList.remove('show');
+  overlay.classList.remove('active');  // ✅ overlay off
+});
+
+// overlay click par bhi band ho
+overlay.addEventListener('click', function() {
+  document.getElementById('mainNav').classList.remove('show');
+  overlay.classList.remove('active');  // ✅ overlay click se band
+});
+</script>
 <script>
   const dropdowns = document.querySelectorAll('.nav-item.dropdown');
 
