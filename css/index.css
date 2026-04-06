@@ -67,13 +67,10 @@ body {
   text-decoration: none;
   color: black;
   font-size: 13px;
-  border-bottom: 1px solid transparent; /* 👈 important */
+  border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
+  position: relative;
 }
-
-/* hover → sirf line */
-
-/* show dropdown */
 .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
@@ -86,7 +83,7 @@ body {
 .dropdown-menu a::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 12px;
   bottom: 5px;
   width: 0;
   height: 2px;
@@ -97,6 +94,13 @@ body {
 .dropdown-menu a:hover::after {
   width: 100%;
 }
+/* .dropdown-menu::after {
+  transform-origin: right;
+}
+.dropdown-menu:hover::after {
+  transform-origin: left;
+} */
+
 /* .show-dropdown {
   opacity: 1 !important;
   visibility: visible !important;
@@ -681,7 +685,7 @@ body {
 
   .simple-carousel {
     /* margin: 60px auto; */
-    height: 540px;
+    height: 570px;
     margin-top: 0px;
   }
   .banner {
