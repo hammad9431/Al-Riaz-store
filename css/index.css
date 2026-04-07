@@ -321,6 +321,9 @@ body {
   .dropdown-menu a:last-child {
     border-bottom: none;
   }
+  .nav-link a:last-child {
+    padding:0;
+  }
   .header-main {
     display: flex;
     width: 100%;
@@ -411,8 +414,8 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);    /* ✅ blur effect */
-  z-index: 1999;                 /* ✅ nav se ek kam */
+  backdrop-filter: blur(3px);   
+  z-index: 1999;                
   transition: opacity 0.3s ease;
 }
 
@@ -693,7 +696,7 @@ body {
   margin: -18% auto;
 }
   .first-text {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .simple-carousel {
@@ -1141,10 +1144,7 @@ body {
 .hero-section {
   height: 100vh;
   background: url("../assets/images/WhatsApp Image 2026-04-05 at 3.02.07 PM.jpeg") center/cover no-repeat;
-
-  /* 🔥 IMPORTANT (parallax effect) */
   background-attachment: fixed;
-
   position: relative;
   display: flex;
   justify-content: center;
@@ -1157,7 +1157,9 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(218, 157, 43, 0.6);
+  /* background: rgba(218, 157, 43, 0.6); */
+  background: linear-gradient(135deg, rgba(14, 20, 28, 0.76), rgba(167, 118, 39, 0.58));
+
   top: 0;
   left: 0;
 }
@@ -1197,6 +1199,119 @@ body {
   
 }
 /* <!-- --OUR-GOAL--SECTION--END-- --> */
+
+/* <!-- --OUR-GOAL--SECTION--REFINED--START-- -->
+.hero-section {
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.16), transparent 24%),
+    radial-gradient(circle at 80% 70%, rgba(214, 153, 58, 0.18), transparent 28%);
+  z-index: 1;
+  animation: heroGlow 8s ease-in-out infinite;
+}
+
+.overlay {
+  background: linear-gradient(135deg, rgba(14, 20, 28, 0.76), rgba(167, 118, 39, 0.58));
+}
+
+.hero-content {
+  max-width: 840px;
+  padding: 38px 42px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  background: rgba(12, 18, 26, 0.22);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+  animation: heroContentRise 1.1s ease both;
+}
+
+.hero-content h4 {
+  margin: 0 0 18px;
+  font-family: poppins, sans-serif;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.45em;
+  color: #f2c078;
+  text-transform: uppercase;
+  animation: heroTextReveal 0.9s ease 0.15s both;
+}
+
+.hero-content h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 3.2vw, 40px);
+  font-weight: 600;
+  line-height: 1.28;
+  text-transform: none;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+  animation: heroTextReveal 0.9s ease 0.3s both;
+}
+
+@keyframes heroContentRise {
+  from {
+    opacity: 0;
+    transform: translateY(38px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    margin: 0 20px;
+    padding: 28px 22px;
+    border-radius: 22px;
+  }
+
+  .hero-content h4 {
+    letter-spacing: 0.28em;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-content {
+    margin: 0 16px;
+    padding: 24px 18px;
+  }
+
+  .hero-content h3 {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+} */
+/* <!-- --OUR-GOAL--SECTION--REFINED--END-- --> */
 
  /* <!-- --WHITE--BUTTON--SLIDER--Start--> */
 
@@ -1617,12 +1732,13 @@ iframe {
 .footer {
   background: rgb(21, 25, 31);
   color: white;
-  padding-top: 50px;
+  padding-top: 30px;
   font-family: poppins;
 }
 
 .footer-container {
   max-width: 1200px;
+  /* height: 200px; */
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);

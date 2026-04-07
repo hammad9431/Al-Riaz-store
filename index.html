@@ -417,51 +417,38 @@ We provide end-to-end clothing solutions including manufacturing, sourcing, and 
 </body>
 
 <!-- Header-heading-script --Start-->
- <!-- DROP-DOWN--OPEN-CLOSE -->
-<!-- <script>
-const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-
-dropdowns.forEach(dropdown => {
-  const toggle = dropdown.querySelector('.dropdown-toggle');
-  toggle.addEventListener('click', e => {
-    e.preventDefault();
-    dropdown.classList.toggle('active'); 
-  });
-});
-</script>
-<script>
-  document.addEventListener('click', function(e) {
-  const nav = document.querySelector('.nav');
-  const menuToggle = document.querySelector('.menu-toggle');
-
-  if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-    nav.classList.remove('show');
-  }
-});
-</script> -->
-
 <!-- --BODY--BLUER-- -->
 <script>
   const overlay = document.getElementById('navOverlay');
+  const mainNav = document.getElementById('mainNav');
+  const menuToggleBtn = document.getElementById('menuToggle');
+  const closeMenuBtn = document.getElementById('closeMenu');
+
+  function closeMobileNav() {
+    mainNav.classList.remove('show');
+    overlay.classList.remove('active');
+  }
 
 // menu open hone par
-document.getElementById('menuToggle').addEventListener('click', function() {
-  document.getElementById('mainNav').classList.add('show');
+menuToggleBtn.addEventListener('click', function() {
+  mainNav.classList.add('show');
   overlay.classList.add('active');  // ✅ overlay on
 });
 
 // menu close hone par
-document.getElementById('closeMenu').addEventListener('click', function() {
-  document.getElementById('mainNav').classList.remove('show');
+closeMenuBtn.addEventListener('click', function() {
+  mainNav.classList.remove('show');
   overlay.classList.remove('active');  // ✅ overlay off
 });
 
 // overlay click par bhi band ho
 overlay.addEventListener('click', function() {
-  document.getElementById('mainNav').classList.remove('show');
+  mainNav.classList.remove('show');
   overlay.classList.remove('active');  // ✅ overlay click se band
 });
 </script>
+
+ <!-- DROP-DOWN--OPEN-CLOSE -->
 <script>
   const dropdowns = document.querySelectorAll('.nav-item.dropdown');
 
@@ -484,7 +471,7 @@ overlay.addEventListener('click', function() {
   const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
-      document.querySelector('.nav').classList.remove('show');
+      closeMobileNav();
       dropdowns.forEach(d => d.classList.remove('active'));
     });
   });
@@ -493,7 +480,7 @@ overlay.addEventListener('click', function() {
   const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
   dropdownLinks.forEach(link => {
     link.addEventListener('click', function() {
-      document.querySelector('.nav').classList.remove('show');
+      closeMobileNav();
       dropdowns.forEach(d => d.classList.remove('active'));
     });
   });
@@ -506,7 +493,7 @@ overlay.addEventListener('click', function() {
     dropdowns.forEach(d => d.classList.remove('active'));
 
     if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-      nav.classList.remove('show');
+      closeMobileNav();
     }
   });
 </script>
@@ -577,10 +564,11 @@ function triggerHeaderAnim(direction) {
 
     menuToggle.addEventListener("click", () => {
       nav.classList.add("show");
+      overlay.classList.add("active");
     });
 
     closeMenu.addEventListener("click", () => {
-      nav.classList.remove("show");
+      closeMobileNav();
     });
   </script>
 <!-- Header-heading-script --End-->
@@ -715,7 +703,7 @@ document.querySelectorAll('#aboutContent, #aboutImages').forEach(el => {
 
 
 <!-- --SERVICE--SECTION--START--Seript-- -->
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".service-card");
 
