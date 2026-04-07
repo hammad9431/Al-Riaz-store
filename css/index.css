@@ -439,10 +439,10 @@ body {
 .carousel-main {
   height: 920px;
   /* margin-top: 120px; */
-  background: #f5f5f5;
+  background: red;
 }
 .simple-carousel {
-  /* background-color:black; */
+  background-color:black;
   position: relative;
   width: 100%;
   margin: 0px auto;
@@ -479,7 +479,7 @@ body {
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(80);
   }
 }
 
@@ -701,7 +701,7 @@ body {
 
   .simple-carousel {
     /* margin: 60px auto; */
-    height: 620px;
+    height: 520px;
     margin-top: 0px;
   }
   .banner {
